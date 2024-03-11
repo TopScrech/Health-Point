@@ -7,47 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F36BB9452A5ED4D200E93809 /* Health_PointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9442A5ED4D200E93809 /* Health_PointApp.swift */; };
-		F36BB9472A5ED4D200E93809 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9462A5ED4D200E93809 /* Item.swift */; };
-		F36BB9492A5ED4D200E93809 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9482A5ED4D200E93809 /* ContentView.swift */; };
+		F35961842B94F5E900DCC8D9 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F35961832B94F5E900DCC8D9 /* Algorithms */; };
+		F35AFB392B9FAE620065145A /* Glucose Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AFB382B9FAE620065145A /* Glucose Data.swift */; };
+		F35AFB3B2B9FAE6D0065145A /* Glucose VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AFB3A2B9FAE6D0065145A /* Glucose VM.swift */; };
+		F35AFB3D2B9FAF3E0065145A /* Libre View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AFB3C2B9FAF3E0065145A /* Libre View.swift */; };
+		F36BB9452A5ED4D200E93809 /* Health Point App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9442A5ED4D200E93809 /* Health Point App.swift */; };
 		F36BB94B2A5ED4D500E93809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36BB94A2A5ED4D500E93809 /* Assets.xcassets */; };
-		F36BB94F2A5ED4D500E93809 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36BB94E2A5ED4D500E93809 /* Preview Assets.xcassets */; };
-		F36BB95A2A5ED4D500E93809 /* Health_PointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9592A5ED4D500E93809 /* Health_PointTests.swift */; };
-		F36BB9642A5ED4D500E93809 /* Health_PointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9632A5ED4D500E93809 /* Health_PointUITests.swift */; };
-		F36BB9662A5ED4D500E93809 /* Health_PointUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9652A5ED4D500E93809 /* Health_PointUITestsLaunchTests.swift */; };
+		F36BB9732A5ED55200E93809 /* Health List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9722A5ED55200E93809 /* Health List.swift */; };
+		F36BB9752A5EDC0500E93809 /* App Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9742A5EDC0500E93809 /* App Container.swift */; };
+		F36BB9782A5EDEAE00E93809 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F36BB9772A5EDEAE00E93809 /* ScrechKit */; };
+		F3E7038F2B9B00D500333D4F /* Insulin View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7038C2B9B00CB00333D4F /* Insulin View.swift */; };
+		F3E703912B9B00D900333D4F /* Diabetes VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7038E2B9B00CB00333D4F /* Diabetes VM.swift */; };
+		F3E703932B9B010700333D4F /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E703922B9B010700333D4F /* Transition.swift */; };
+		F3E703952B9B01F700333D4F /* Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E703942B9B01F700333D4F /* Home View.swift */; };
+		F3E703972B9B027900333D4F /* Data List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E703962B9B027900333D4F /* Data List.swift */; };
+		F3E703992B9B03E400333D4F /* Data Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E703982B9B03E400333D4F /* Data Record.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F36BB9562A5ED4D500E93809 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F36BB9392A5ED4D200E93809 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F36BB9402A5ED4D200E93809;
-			remoteInfo = "Health Point";
-		};
-		F36BB9602A5ED4D500E93809 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F36BB9392A5ED4D200E93809 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F36BB9402A5ED4D200E93809;
-			remoteInfo = "Health Point";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		F35AFB382B9FAE620065145A /* Glucose Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Glucose Data.swift"; sourceTree = "<group>"; };
+		F35AFB3A2B9FAE6D0065145A /* Glucose VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Glucose VM.swift"; sourceTree = "<group>"; };
+		F35AFB3C2B9FAF3E0065145A /* Libre View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Libre View.swift"; sourceTree = "<group>"; };
 		F36BB9412A5ED4D200E93809 /* Health Point.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Point.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36BB9442A5ED4D200E93809 /* Health_PointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_PointApp.swift; sourceTree = "<group>"; };
-		F36BB9462A5ED4D200E93809 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		F36BB9482A5ED4D200E93809 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F36BB9442A5ED4D200E93809 /* Health Point App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Health Point App.swift"; sourceTree = "<group>"; };
 		F36BB94A2A5ED4D500E93809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F36BB94C2A5ED4D500E93809 /* Health_Point.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Health_Point.entitlements; sourceTree = "<group>"; };
-		F36BB94E2A5ED4D500E93809 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F36BB9502A5ED4D500E93809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F36BB9552A5ED4D500E93809 /* Health PointTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Health PointTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36BB9592A5ED4D500E93809 /* Health_PointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_PointTests.swift; sourceTree = "<group>"; };
-		F36BB95F2A5ED4D500E93809 /* Health PointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Health PointUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36BB9632A5ED4D500E93809 /* Health_PointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_PointUITests.swift; sourceTree = "<group>"; };
-		F36BB9652A5ED4D500E93809 /* Health_PointUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_PointUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F36BB9722A5ED55200E93809 /* Health List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Health List.swift"; sourceTree = "<group>"; };
+		F36BB9742A5EDC0500E93809 /* App Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Container.swift"; sourceTree = "<group>"; };
+		F3E7038C2B9B00CB00333D4F /* Insulin View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Insulin View.swift"; sourceTree = "<group>"; };
+		F3E7038E2B9B00CB00333D4F /* Diabetes VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diabetes VM.swift"; sourceTree = "<group>"; };
+		F3E703922B9B010700333D4F /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		F3E703942B9B01F700333D4F /* Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home View.swift"; sourceTree = "<group>"; };
+		F3E703962B9B027900333D4F /* Data List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data List.swift"; sourceTree = "<group>"; };
+		F3E703982B9B03E400333D4F /* Data Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Record.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,32 +48,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F36BB9522A5ED4D500E93809 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F36BB95C2A5ED4D500E93809 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F35961842B94F5E900DCC8D9 /* Algorithms in Frameworks */,
+				F36BB9782A5EDEAE00E93809 /* ScrechKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F33BC1782B95C98B00C9B2DB /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F36BB9742A5EDC0500E93809 /* App Container.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		F36BB9382A5ED4D200E93809 = {
 			isa = PBXGroup;
 			children = (
 				F36BB9432A5ED4D200E93809 /* Health Point */,
-				F36BB9582A5ED4D500E93809 /* Health PointTests */,
-				F36BB9622A5ED4D500E93809 /* Health PointUITests */,
 				F36BB9422A5ED4D200E93809 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,8 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				F36BB9412A5ED4D200E93809 /* Health Point.app */,
-				F36BB9552A5ED4D500E93809 /* Health PointTests.xctest */,
-				F36BB95F2A5ED4D500E93809 /* Health PointUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,40 +83,31 @@
 		F36BB9432A5ED4D200E93809 /* Health Point */ = {
 			isa = PBXGroup;
 			children = (
-				F36BB9442A5ED4D200E93809 /* Health_PointApp.swift */,
-				F36BB9462A5ED4D200E93809 /* Item.swift */,
-				F36BB9482A5ED4D200E93809 /* ContentView.swift */,
+				F36BB9442A5ED4D200E93809 /* Health Point App.swift */,
+				F3E703922B9B010700333D4F /* Transition.swift */,
+				F33BC1782B95C98B00C9B2DB /* Navigation */,
+				F3E703942B9B01F700333D4F /* Home View.swift */,
+				F36BB9722A5ED55200E93809 /* Health List.swift */,
+				F3E7038B2B9B00CB00333D4F /* Diabetes */,
 				F36BB94A2A5ED4D500E93809 /* Assets.xcassets */,
 				F36BB94C2A5ED4D500E93809 /* Health_Point.entitlements */,
 				F36BB9502A5ED4D500E93809 /* Info.plist */,
-				F36BB94D2A5ED4D500E93809 /* Preview Content */,
 			);
 			path = "Health Point";
 			sourceTree = "<group>";
 		};
-		F36BB94D2A5ED4D500E93809 /* Preview Content */ = {
+		F3E7038B2B9B00CB00333D4F /* Diabetes */ = {
 			isa = PBXGroup;
 			children = (
-				F36BB94E2A5ED4D500E93809 /* Preview Assets.xcassets */,
+				F3E703962B9B027900333D4F /* Data List.swift */,
+				F35AFB382B9FAE620065145A /* Glucose Data.swift */,
+				F35AFB3A2B9FAE6D0065145A /* Glucose VM.swift */,
+				F35AFB3C2B9FAF3E0065145A /* Libre View.swift */,
+				F3E7038C2B9B00CB00333D4F /* Insulin View.swift */,
+				F3E7038E2B9B00CB00333D4F /* Diabetes VM.swift */,
+				F3E703982B9B03E400333D4F /* Data Record.swift */,
 			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F36BB9582A5ED4D500E93809 /* Health PointTests */ = {
-			isa = PBXGroup;
-			children = (
-				F36BB9592A5ED4D500E93809 /* Health_PointTests.swift */,
-			);
-			path = "Health PointTests";
-			sourceTree = "<group>";
-		};
-		F36BB9622A5ED4D500E93809 /* Health PointUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F36BB9632A5ED4D500E93809 /* Health_PointUITests.swift */,
-				F36BB9652A5ED4D500E93809 /* Health_PointUITestsLaunchTests.swift */,
-			);
-			path = "Health PointUITests";
+			path = Diabetes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,45 +126,13 @@
 			dependencies = (
 			);
 			name = "Health Point";
+			packageProductDependencies = (
+				F36BB9772A5EDEAE00E93809 /* ScrechKit */,
+				F35961832B94F5E900DCC8D9 /* Algorithms */,
+			);
 			productName = "Health Point";
 			productReference = F36BB9412A5ED4D200E93809 /* Health Point.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F36BB9542A5ED4D500E93809 /* Health PointTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F36BB96C2A5ED4D500E93809 /* Build configuration list for PBXNativeTarget "Health PointTests" */;
-			buildPhases = (
-				F36BB9512A5ED4D500E93809 /* Sources */,
-				F36BB9522A5ED4D500E93809 /* Frameworks */,
-				F36BB9532A5ED4D500E93809 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F36BB9572A5ED4D500E93809 /* PBXTargetDependency */,
-			);
-			name = "Health PointTests";
-			productName = "Health PointTests";
-			productReference = F36BB9552A5ED4D500E93809 /* Health PointTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F36BB95E2A5ED4D500E93809 /* Health PointUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F36BB96F2A5ED4D500E93809 /* Build configuration list for PBXNativeTarget "Health PointUITests" */;
-			buildPhases = (
-				F36BB95B2A5ED4D500E93809 /* Sources */,
-				F36BB95C2A5ED4D500E93809 /* Frameworks */,
-				F36BB95D2A5ED4D500E93809 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F36BB9612A5ED4D500E93809 /* PBXTargetDependency */,
-			);
-			name = "Health PointUITests";
-			productName = "Health PointUITests";
-			productReference = F36BB95F2A5ED4D500E93809 /* Health PointUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -198,18 +142,10 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					F36BB9402A5ED4D200E93809 = {
 						CreatedOnToolsVersion = 15.0;
-					};
-					F36BB9542A5ED4D500E93809 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = F36BB9402A5ED4D200E93809;
-					};
-					F36BB95E2A5ED4D500E93809 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = F36BB9402A5ED4D200E93809;
 					};
 				};
 			};
@@ -222,13 +158,15 @@
 				Base,
 			);
 			mainGroup = F36BB9382A5ED4D200E93809;
+			packageReferences = (
+				F36BB9762A5EDEAE00E93809 /* XCRemoteSwiftPackageReference "ScrechKit" */,
+				F35961822B94F5E900DCC8D9 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = F36BB9422A5ED4D200E93809 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F36BB9402A5ED4D200E93809 /* Health Point */,
-				F36BB9542A5ED4D500E93809 /* Health PointTests */,
-				F36BB95E2A5ED4D500E93809 /* Health PointUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,22 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F36BB94F2A5ED4D500E93809 /* Preview Assets.xcassets in Resources */,
 				F36BB94B2A5ED4D500E93809 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F36BB9532A5ED4D500E93809 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F36BB95D2A5ED4D500E93809 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,43 +187,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F36BB9472A5ED4D200E93809 /* Item.swift in Sources */,
-				F36BB9452A5ED4D200E93809 /* Health_PointApp.swift in Sources */,
-				F36BB9492A5ED4D200E93809 /* ContentView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F36BB9512A5ED4D500E93809 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F36BB95A2A5ED4D500E93809 /* Health_PointTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F36BB95B2A5ED4D500E93809 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F36BB9642A5ED4D500E93809 /* Health_PointUITests.swift in Sources */,
-				F36BB9662A5ED4D500E93809 /* Health_PointUITestsLaunchTests.swift in Sources */,
+				F35AFB3D2B9FAF3E0065145A /* Libre View.swift in Sources */,
+				F35AFB3B2B9FAE6D0065145A /* Glucose VM.swift in Sources */,
+				F3E703972B9B027900333D4F /* Data List.swift in Sources */,
+				F3E703932B9B010700333D4F /* Transition.swift in Sources */,
+				F3E703912B9B00D900333D4F /* Diabetes VM.swift in Sources */,
+				F36BB9752A5EDC0500E93809 /* App Container.swift in Sources */,
+				F3E703952B9B01F700333D4F /* Home View.swift in Sources */,
+				F36BB9732A5ED55200E93809 /* Health List.swift in Sources */,
+				F36BB9452A5ED4D200E93809 /* Health Point App.swift in Sources */,
+				F35AFB392B9FAE620065145A /* Glucose Data.swift in Sources */,
+				F3E7038F2B9B00D500333D4F /* Insulin View.swift in Sources */,
+				F3E703992B9B03E400333D4F /* Data Record.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F36BB9572A5ED4D500E93809 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F36BB9402A5ED4D200E93809 /* Health Point */;
-			targetProxy = F36BB9562A5ED4D500E93809 /* PBXContainerItemProxy */;
-		};
-		F36BB9612A5ED4D500E93809 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F36BB9402A5ED4D200E93809 /* Health Point */;
-			targetProxy = F36BB9602A5ED4D500E93809 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F36BB9672A5ED4D500E93809 /* Debug */ = {
@@ -337,6 +239,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -355,7 +258,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -398,6 +303,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -410,7 +316,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -425,12 +333,16 @@
 				CODE_SIGN_ENTITLEMENTS = "Health Point/Health_Point.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Health Point/Preview Content\"";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Health Point/Info.plist";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Display summary of your health metrics";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Share health metrict";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Update health metrics";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -464,12 +376,16 @@
 				CODE_SIGN_ENTITLEMENTS = "Health Point/Health_Point.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Health Point/Preview Content\"";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Health Point/Info.plist";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Display summary of your health metrics";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Share health metrict";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Update health metrics";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -495,96 +411,6 @@
 			};
 			name = Release;
 		};
-		F36BB96D2A5ED4D500E93809 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Health-PointTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Health Point.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Health Point";
-			};
-			name = Debug;
-		};
-		F36BB96E2A5ED4D500E93809 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Health-PointTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Health Point.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Health Point";
-			};
-			name = Release;
-		};
-		F36BB9702A5ED4D500E93809 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Health-PointUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Health Point";
-			};
-			name = Debug;
-		};
-		F36BB9712A5ED4D500E93809 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Health-PointUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Health Point";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -606,25 +432,39 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F36BB96C2A5ED4D500E93809 /* Build configuration list for PBXNativeTarget "Health PointTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F36BB96D2A5ED4D500E93809 /* Debug */,
-				F36BB96E2A5ED4D500E93809 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F36BB96F2A5ED4D500E93809 /* Build configuration list for PBXNativeTarget "Health PointUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F36BB9702A5ED4D500E93809 /* Debug */,
-				F36BB9712A5ED4D500E93809 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F35961822B94F5E900DCC8D9 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		F36BB9762A5EDEAE00E93809 /* XCRemoteSwiftPackageReference "ScrechKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TopScrech/ScrechKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F35961832B94F5E900DCC8D9 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F35961822B94F5E900DCC8D9 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		F36BB9772A5EDEAE00E93809 /* ScrechKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F36BB9762A5EDEAE00E93809 /* XCRemoteSwiftPackageReference "ScrechKit" */;
+			productName = ScrechKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F36BB9392A5ED4D200E93809 /* Project object */;
 }
