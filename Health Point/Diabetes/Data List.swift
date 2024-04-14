@@ -12,7 +12,7 @@ struct DataList: View {
             }
             
             ForEach(Array(vm.recordsByDay.enumerated()), id: \.offset) { _, dayRecords in
-                Section(header: Text(dayRecords.first?.date.formatted(date: .long, time: .omitted) ?? "")) {
+                Section(dayRecords.first?.date.formatted(date: .long, time: .omitted) ?? "") {
                     ForEach(dayRecords, id: \.id) { record in
                         HStack {
                             if record.type == .insulin(.bolus) {
@@ -40,11 +40,11 @@ struct DataList: View {
                             Section {
                                 Button(role: .destructive) {
                                     vm.deleteRecord(record) { error, success in
-//                                        if let error {
-//                                            print(error.localizedDescription)
-//                                        } else {
-//                                            print("Success: \(success)"
-//                                        }
+                                        //                                        if let error {
+                                        //                                            print(error.localizedDescription)
+                                        //                                        } else {
+                                        //                                            print("Success: \(success)"
+                                        //                                        }
                                     }
                                 } label: {
                                     Label("Delete", systemImage: "trash")
@@ -57,7 +57,7 @@ struct DataList: View {
             
             Section {
                 Button {
-                    vm.fetchInsulinDelivery()
+                    vm.readInsulin()
                 } label: {
                     Text("Fetch insulin")
                 }
@@ -71,7 +71,7 @@ struct DataList: View {
         }
         .navigationTitle("Insulin Delivery")
         .refreshableTask {
-            vm.fetchInsulinDelivery()
+            vm.readInsulin()
         }
     }
 }

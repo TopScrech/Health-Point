@@ -14,5 +14,6 @@ enum DataType: Equatable {
 }
 
 enum InsulinType: String {
-    case basal, bolus
+    case basal, 
+         bolus
 }

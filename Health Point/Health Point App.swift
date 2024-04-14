@@ -1,8 +1,8 @@
 import ScrechKit
-import SwiftData
+//import SwiftData
 
 @main
-struct Health_PointApp: App {
+struct HealthPointApp: App {
     var body: some Scene {
         WindowGroup {
             AppContainer()

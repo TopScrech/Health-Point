@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InsulinView: View {
-    @Bindable var vm = DiabetesVM()
+    @Bindable private var vm = DiabetesVM()
     @Environment(\.dismiss) private var dismiss
     
     @AppStorage("amount_insulin") private var amountInsulin = 5.0
@@ -63,7 +63,12 @@ struct InsulinView: View {
             Spacer()
             
             Button {
-                vm.saveInsulinDelivery(amount: amountInsulin, type: selectedInsulin, date: vm.recordDate) // METADATA
+                vm.saveInsulinDelivery(
+                    amount: amountInsulin,
+                    type: selectedInsulin,
+                    date: vm.recordDate
+                ) // METADATA
+                
                 dismiss()
             } label: {
                 Text("Save")

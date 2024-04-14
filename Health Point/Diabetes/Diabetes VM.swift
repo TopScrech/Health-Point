@@ -62,14 +62,21 @@ final class DiabetesVM {
         }
     }
     
-    private func requestAccess() {
-        let bloodGlucose = HKObjectType.quantityType(forIdentifier: .bloodGlucose)!
-        let insulinDelivery = HKObjectType.quantityType(forIdentifier: .insulinDelivery)!
-        let shareTypes: Set = [bloodGlucose, insulinDelivery]
-        let readTypes: Set = [bloodGlucose, insulinDelivery]
+    let glucoseType: HKQuantityType? = .bloodGlucose()
+    let insulinType: HKQuantityType? = .insulinDelivery()
+    let carbsType: HKQuantityType? = .dietaryCarbohydrates()
+    
+    private var dataTypes: Set<HKQuantityType> {
+        guard let glucoseType, let insulinType, let carbsType else {
+            return []
+        }
         
-        main {
-            self.healthStore.requestAuthorization(toShare: shareTypes, read: readTypes) { success, error in
+        return Set([glucoseType, insulinType, carbsType])
+    }
+    
+    private func requestAccess() {
+        healthStore.requestAuthorization(dataTypes) { success, error in
+            main {
                 if let error {
                     print("Error requesting authorization: \(error.localizedDescription)")
                 }
@@ -81,8 +88,8 @@ final class DiabetesVM {
         }
     }
     
-    func fetchInsulinDelivery() {
-        guard let insulinDeliveryType = HKObjectType.quantityType(forIdentifier: .insulinDelivery) else {
+    func readInsulin() {
+        guard let insulinType = HKObjectType.quantityType(forIdentifier: .insulinDelivery) else {
             print("Insulin Delivery Type is unavailable in HealthKit")
             return
         }
@@ -106,7 +113,12 @@ final class DiabetesVM {
             ascending: false
         )
         
-        let insulinQuery = HKSampleQuery(sampleType: insulinDeliveryType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sortDescriptor]) { query, results, error in
+        let insulinQuery = HKSampleQuery(
+            sampleType: insulinType,
+            predicate: predicate,
+            limit: HKObjectQueryNoLimit,
+            sortDescriptors: [sortDescriptor]
+        ) { query, results, error in
             if let error {
                 print("Error retrieving insulin delivery data: \(error.localizedDescription)")
                 return
