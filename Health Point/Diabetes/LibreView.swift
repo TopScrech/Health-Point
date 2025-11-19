@@ -23,17 +23,8 @@ struct LibreView: View {
             }
             .foregroundStyle(.foreground)
             
-            ForEach(data, id: \.self) { record in
-#warning("split")
-                HStack {
-                    Text(record.data)
-                    
-                    Spacer()
-                    
-                    Text(record.date, format: .dateTime)
-                        .footnote()
-                        .foregroundStyle(.secondary)
-                }
+            ForEach(data, id: \.self) {
+                LibreViewRecordCard($0)
             }
         }
         .onChange(of: vm.recordDate) { _, newDate in
