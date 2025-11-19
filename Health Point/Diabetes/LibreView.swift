@@ -11,38 +11,20 @@ struct LibreView: View {
             Section {
                 DatePicker("Record date", selection: $vm.recordDate, displayedComponents: .date)
                 
-                Button {
-                    if let string = UIPasteboard.general.string {
-                        stringData = string
-                        
-                        data = vm.joinDataAndDates(
-                            vm.extractData(stringData),
-                            vm.createDates(vm.recordDate)
-                        )
-                    }
-                } label: {
-                    Text("Import data from LibreView")
+                Button("Import data from LibreView") {
+                    importFromLibreView()
                 }
                 
                 if !data.isEmpty {
-                    Button {
-                        for record in data {
-                            vm.saveGlucoseLevel(
-                                amount: record.data,
-                                date: record.date
-                            )
-                        }
-                        
-                        stringData = ""
-                        data = []
-                    } label: {
-                        Text("Save to Apple Health")
+                    Button("Save to Apple Health") {
+                        saveRecords()
                     }
                 }
             }
             .foregroundStyle(.foreground)
             
             ForEach(data, id: \.self) { record in
+#warning("split")
                 HStack {
                     Text(record.data)
                     
@@ -61,6 +43,26 @@ struct LibreView: View {
             )
         }
         .task {
+            data = vm.joinDataAndDates(
+                vm.extractData(stringData),
+                vm.createDates(vm.recordDate)
+            )
+        }
+    }
+    
+    private func saveRecords() {
+        for record in data {
+            vm.saveGlucoseLevel(amount: record.data, date: record.date)
+        }
+        
+        stringData = ""
+        data = []
+    }
+    
+    private func importFromLibreView() {
+        if let string = UIPasteboard.general.string {
+            stringData = string
+            
             data = vm.joinDataAndDates(
                 vm.extractData(stringData),
                 vm.createDates(vm.recordDate)

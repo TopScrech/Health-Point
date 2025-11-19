@@ -1,5 +1,4 @@
 import ScrechKit
-//import SwiftData
 
 @main
 struct HealthPointApp: App {

@@ -5,13 +5,12 @@ struct DataList: View {
     
     var body: some View {
         List {
-            NavigationLink {
+            NavigationLink("LibreView") {
                 LibreView()
-            } label: {
-                Text("LibreView")
             }
             
             ForEach(Array(vm.recordsByDay.enumerated()), id: \.offset) { _, dayRecords in
+#warning("split")
                 Section(dayRecords.first?.date.formatted(date: .long, time: .omitted) ?? "") {
                     ForEach(dayRecords, id: \.id) { record in
                         HStack {
@@ -31,23 +30,13 @@ struct DataList: View {
                                 .foregroundStyle(.secondary)
                         }
                         .contextMenu {
-                            Button {
-                                
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
+                            Button("Edit", systemImage: "pencil") {
+#warning("Does nothing")
                             }
                             
                             Section {
-                                Button(role: .destructive) {
-                                    vm.deleteRecord(record) { error, success in
-                                        //                                        if let error {
-                                        //                                            print(error.localizedDescription)
-                                        //                                        } else {
-                                        //                                            print("Success: \(success)"
-                                        //                                        }
-                                    }
-                                } label: {
-                                    Label("Delete", systemImage: "trash")
+                                Button("Delete", systemImage: "trash", role: .destructive) {
+                                    delete(record)
                                 }
                             }
                         }
@@ -56,22 +45,28 @@ struct DataList: View {
             }
             
             Section {
-                Button {
+                Button("Fetch insulin") {
                     vm.readInsulin()
-                } label: {
-                    Text("Fetch insulin")
                 }
                 
-                Button {
+                Button("Fetch glucose") {
                     vm.fetchGlucoseData()
-                } label: {
-                    Text("Fetch glucose")
                 }
             }
         }
         .navigationTitle("Insulin Delivery")
         .refreshableTask {
             vm.readInsulin()
+        }
+    }
+    
+    private func delete(_ record: DataRecord) {
+        vm.deleteRecord(record) { error, success in
+            //            if let error {
+            //                print(error.localizedDescription)
+            //            } else {
+            //                print("Success:", success)
+            //            }
         }
     }
 }

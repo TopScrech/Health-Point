@@ -1,5 +1,5 @@
-import ScrechKit
-import HealthKit
+import Foundation
+import HealthyKit
 import Algorithms
 
 @Observable
@@ -67,23 +67,21 @@ final class DiabetesVM {
     let carbsType: HKQuantityType? = .dietaryCarbohydrates()
     
     private var dataTypes: Set<HKQuantityType> {
-        guard let glucoseType, let insulinType, let carbsType else {
-            return []
+        if let glucoseType, let insulinType, let carbsType {
+            Set([glucoseType, insulinType, carbsType])
+        } else {
+            []
         }
-        
-        return Set([glucoseType, insulinType, carbsType])
     }
     
     private func requestAccess() {
-        healthStore.requestAuthorization(dataTypes) { success, error in
-            main {
-                if let error {
-                    print("Error requesting authorization: \(error.localizedDescription)")
-                }
-                
-                if success {
-                    print("Authorization successful")
-                }
+        healthStore.requestAuthorization(toShare: dataTypes, read: dataTypes) { success, error in
+            if let error {
+                print("Error requesting authorization:", error.localizedDescription)
+            }
+            
+            if success {
+                print("Authorization successful")
             }
         }
     }
@@ -96,11 +94,7 @@ final class DiabetesVM {
         
         // from 1 month ago to now
         let endDate = Date()
-        let startDate = Calendar.current.date(
-            byAdding: .month,
-            value: -12,
-            to: Date()
-        )
+        let startDate = Calendar.current.date(byAdding: .month, value: -12, to: Date())
         
         let predicate = HKQuery.predicateForSamples(
             withStart: startDate,
@@ -118,9 +112,9 @@ final class DiabetesVM {
             predicate: predicate,
             limit: HKObjectQueryNoLimit,
             sortDescriptors: [sortDescriptor]
-        ) { query, results, error in
+        ) { _, results, error in
             if let error {
-                print("Error retrieving insulin delivery data: \(error.localizedDescription)")
+                print("Error retrieving insulin delivery data:", error.localizedDescription)
                 return
             }
             
@@ -134,19 +128,29 @@ final class DiabetesVM {
             // MARK: Metadata: ["HKInsulinDeliveryReason": 2, "HKWasUserEntered": 1]
             for sample in insulinSamples {
                 let insulinUnit = sample.quantity.doubleValue(for: HKUnit.internationalUnit())
-                print("Insulin Delivered: \(insulinUnit) IU, Date: \(sample.startDate) \(sample.metadata?.description ?? "")")
                 
-                if let insulinMetadata = sample.metadata, let insulinCategory = insulinMetadata["HKInsulinDeliveryReason"] as? Int {
-                    var insulinType: InsulinType
-                    insulinType = insulinCategory == 1 ? .basal : .bolus
-                    
-                    loadedRecords.append(.init(
-                        data: "\(Int(insulinUnit))",
-                        type: .insulin(insulinType),
-                        date: sample.startDate,
-                        healthKitObject: sample
-                    ))
+                print("Insulin Delivered:", insulinUnit)
+                print("Date:", sample.startDate)
+                print("Meta:", sample.metadata?.description ?? "-")
+                
+                guard
+                    let insulinMetadata = sample.metadata,
+                    let insulinCategory = insulinMetadata["HKInsulinDeliveryReason"] as? Int
+                else {
+                    return
                 }
+                
+                var insulinType: InsulinType
+                insulinType = insulinCategory == 1 ? .basal : .bolus
+                
+                let record = DataRecord(
+                    data: Int(insulinUnit).description,
+                    type: .insulin(insulinType),
+                    date: sample.startDate,
+                    healthKitObject: sample
+                )
+                
+                loadedRecords.append(record)
             }
             
             self.records = loadedRecords
@@ -187,9 +191,14 @@ final class DiabetesVM {
             ascending: false
         )
         
-        let glucoseQuery = HKSampleQuery(sampleType: bloodGlucoseType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sortDescriptor]) { query, results, error in
+        let glucoseQuery = HKSampleQuery(
+            sampleType: bloodGlucoseType,
+            predicate: predicate,
+            limit: HKObjectQueryNoLimit,
+            sortDescriptors: [sortDescriptor]
+        ) { _, results, error in
             if let error {
-                print("Error retrieving glucose data: \(error.localizedDescription)")
+                print("Error retrieving glucose data:", error.localizedDescription)
                 return
             }
             
@@ -204,9 +213,12 @@ final class DiabetesVM {
                 let glucoseValueMgDL = sample.quantity.doubleValue(for: unit)
                 
                 // Converting mg/dL to mmol/L
+#warning("make 18.0182 a global constant in healthyKit")
                 let glucoseValueMmolL = glucoseValueMgDL / 18.0182
                 let roundedGlucose = String(format: "%0.1f", glucoseValueMmolL)
-                print("Glucose: \(roundedGlucose) mmol/L, Date: \(sample.startDate)")
+                
+                print("Glucose:", roundedGlucose, "mmol/L")
+                print("Date:", sample.startDate)
             }
         }
         
@@ -220,10 +232,7 @@ final class DiabetesVM {
         }
         
         let insulinUnit = HKUnit.internationalUnit()
-        let insulinQuantity = HKQuantity(
-            unit: insulinUnit,
-            doubleValue: amount
-        )
+        let insulinQuantity = HKQuantity(unit: insulinUnit, doubleValue: amount)
         
         let insulinSample = HKQuantitySample(
             type: insulinDeliveryType,
@@ -233,9 +242,9 @@ final class DiabetesVM {
             metadata: ["HKInsulinDeliveryReason": 21]
         )
         
-        healthStore.save(insulinSample) { success, error in
+        healthStore.save(insulinSample) { _, error in
             if let error {
-                print("Error saving insulin delivery: \(error.localizedDescription)")
+                print("Error saving insulin delivery:", error.localizedDescription)
             } else {
                 print("Successfully saved insulin delivery")
             }

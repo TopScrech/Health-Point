@@ -14,10 +14,7 @@ final class GlucoseVM {
         
         let glucoseAmountInMgDL = amount * 18.0182
         let glucoseUnit = HKUnit(from: "mg/dL")
-        let glucoseQuantity = HKQuantity(
-            unit: glucoseUnit,
-            doubleValue: glucoseAmountInMgDL
-        )
+        let glucoseQuantity = HKQuantity(unit: glucoseUnit, doubleValue: glucoseAmountInMgDL)
         
         let glucoseSample = HKQuantitySample(
             type: glucoseType,
@@ -26,9 +23,9 @@ final class GlucoseVM {
             end: date
         )
         
-        healthStore.save(glucoseSample) { success, error in
+        healthStore.save(glucoseSample) { _, error in
             if let error {
-                print("Error saving glucose level: \(error.localizedDescription)")
+                print("Error saving glucose level:", error.localizedDescription)
             } else {
                 print("Successfully saved glucose level")
             }
@@ -43,6 +40,7 @@ final class GlucoseVM {
         }
         
         var averages = [Double]()
+        
         for index in stride(from: 0, to: doubles.count, by: 2) {
             let average = (doubles[index] + doubles[index + 1]) / 2
             averages.append(round(average * 10) / 10)

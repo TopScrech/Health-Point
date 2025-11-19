@@ -7,10 +7,8 @@ struct HomeView: View {
         VStack {
             DataList()
             
-            Button {
+            Button("New injection") {
                 sheetInsulin = true
-            } label: {
-                Text("New injection")
             }
         }
         .sheet($sheetInsulin) {

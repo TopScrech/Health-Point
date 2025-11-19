@@ -5,12 +5,6 @@ struct InsulinView: View {
     @Environment(\.dismiss) private var dismiss
     
     @AppStorage("amount_insulin") private var amountInsulin = 5.0
-    
-    private let insulinTypes: [InsulinType] = [
-        .basal, // Long
-        .bolus  // Short
-    ]
-    
     @AppStorage("selected_insulin") private var selectedInsulin: InsulinType = .bolus
     
     var body: some View {
@@ -24,9 +18,9 @@ struct InsulinView: View {
             Text(vm.timeDifference)
             
             Picker("Insulin Type", selection: $selectedInsulin) {
-                ForEach(insulinTypes, id: \.self) { type in
-                    Text(type.rawValue)
-                        .tag(type)
+                ForEach(InsulinType.allCases) {
+                    Text($0.rawValue)
+                        .tag($0)
                 }
             }
             .pickerStyle(.segmented)
@@ -63,13 +57,7 @@ struct InsulinView: View {
             Spacer()
             
             Button {
-                vm.saveInsulinDelivery(
-                    amount: amountInsulin,
-                    type: selectedInsulin,
-                    date: vm.recordDate
-                ) // METADATA
-                
-                dismiss()
+                save()
             } label: {
                 Text("Save")
                     .title3(.semibold)
@@ -83,6 +71,13 @@ struct InsulinView: View {
         .task {
             vm.previousValue = amountInsulin
         }
+    }
+    
+    private func save() {
+        // METADATA???
+        vm.saveInsulinDelivery(amount: amountInsulin, type: selectedInsulin, date: vm.recordDate)
+        
+        dismiss()
     }
 }
 

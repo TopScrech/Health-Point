@@ -4,8 +4,12 @@ struct NumericContentTransitionModifier: ViewModifier {
     let newValue: Double
     let oldValue: Double
     
+    private var oldValueBigger: Bool {
+        oldValue > newValue
+    }
+    
     func body(content: Content) -> some View {
         content
-            .contentTransition(newValue > oldValue ? .numericText(countsDown: false) : .numericText(countsDown: true))
+            .contentTransition(.numericText(countsDown: oldValueBigger))
     }
 }

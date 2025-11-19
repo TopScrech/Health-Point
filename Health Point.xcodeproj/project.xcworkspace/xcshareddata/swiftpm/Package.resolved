@@ -1,13 +1,22 @@
 {
-  "originHash" : "d46e1ccd242bb7182df711dc0dbbb36fc28f42f90d7ddeb2364d04dc92a197c6",
+  "originHash" : "13627112d3938c4d14c9f28a8b749507d874e2bef72710f1ba6a1024e1175888",
   "pins" : [
+    {
+      "identity" : "healthykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TopScrech/HealthyKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e8f28950838642461418826fc718ee49e9b72639"
+      }
+    },
     {
       "identity" : "screchkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/TopScrech/ScrechKit",
       "state" : {
         "branch" : "main",
-        "revision" : "8054b781af86326d7846744ac91434bd24910c15"
+        "revision" : "fdfccd9b2b1c10a62a636a2fe439f9d52f11f396"
       }
     },
     {
@@ -15,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-algorithms.git",
       "state" : {
-        "revision" : "f6919dfc309e7f1b56224378b11e28bab5bccc42",
-        "version" : "1.2.0"
+        "revision" : "87e50f483c54e6efd60e885f7f5aa946cee68023",
+        "version" : "1.2.1"
       }
     },
     {
@@ -24,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-numerics.git",
       "state" : {
-        "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
-        "version" : "1.0.2"
+        "revision" : "0c0290ff6b24942dadb83a929ffaaa1481df04a2",
+        "version" : "1.1.1"
       }
     }
   ],
