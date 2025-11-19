@@ -171,25 +171,11 @@ final class DiabetesVM {
             return
         }
         
-        // Specify the date range you want to fetch the data for, or remove for all data
-        let startDate = Calendar.current.date(
-            byAdding: .month,
-            value: -1,
-            to: Date()
-        ) // 1 month ago
+        // 1 month ago to now
+        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
         
-        let endDate = Date()
-        
-        let predicate = HKQuery.predicateForSamples(
-            withStart: startDate,
-            end: endDate,
-            options: .strictStartDate
-        )
-        
-        let sortDescriptor = NSSortDescriptor(
-            key: HKSampleSortIdentifierStartDate,
-            ascending: false
-        )
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
         let glucoseQuery = HKSampleQuery(
             sampleType: bloodGlucoseType,
@@ -213,7 +199,6 @@ final class DiabetesVM {
                 let glucoseValueMgDL = sample.quantity.doubleValue(for: unit)
                 
                 // Converting mg/dL to mmol/L
-#warning("make 18.0182 a global constant in healthyKit")
                 let glucoseValueMmolL = glucoseValueMgDL / 18.0182
                 let roundedGlucose = String(format: "%0.1f", glucoseValueMmolL)
                 

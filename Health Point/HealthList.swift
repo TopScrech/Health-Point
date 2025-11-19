@@ -98,7 +98,7 @@ struct HealthList: View {
             predicate: predicate,
             limit: HKObjectQueryNoLimit,
             sortDescriptors: [sortDescriptor]
-        ) { query, results, error in
+        ) { _, results, error in
             
             if let error {
                 print("Error retrieving workouts:", error.localizedDescription)
