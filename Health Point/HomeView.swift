@@ -1,22 +1,18 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var sheetInsulin = false
+    @AppStorage("last_tab") private var lastTab = 0
     
     var body: some View {
-        VStack {
-            DataList()
-            
-            Button("New injection") {
-                sheetInsulin = true
+        TabView(selection: $lastTab) {
+            Tab("Dashboard", systemImage: "house", value: 0) {
+                Dashboard()
             }
-        }
-        .sheet($sheetInsulin) {
-            InsulinView()
         }
     }
 }
 
 #Preview {
     HomeView()
+        .darkSchemePreferred()
 }
