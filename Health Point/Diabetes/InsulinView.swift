@@ -28,7 +28,6 @@ struct InsulinView: View {
             
             HStack(spacing: 50) {
                 Button {
-                    vm.previousValue = amountInsulin
                     amountInsulin -= 1
                 } label: {
                     Text("-1")
@@ -40,10 +39,9 @@ struct InsulinView: View {
                 Text(amountInsulin)
                     .monospaced()
                     .animation(.default, value: amountInsulin)
-                    .modifier(NumericContentTransitionModifier(newValue: amountInsulin, oldValue: vm.previousValue))
+                    .numericTransition(amountInsulin)
                 
                 Button {
-                    vm.previousValue = amountInsulin
                     amountInsulin += 1
                 } label: {
                     Text("+1")
@@ -67,9 +65,6 @@ struct InsulinView: View {
                     .background(.blue, in: .rect(cornerRadius: 20))
             }
             .padding(.horizontal)
-        }
-        .task {
-            vm.previousValue = amountInsulin
         }
     }
     

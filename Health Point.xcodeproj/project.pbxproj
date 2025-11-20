@@ -8,49 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		F35961842B94F5E900DCC8D9 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F35961832B94F5E900DCC8D9 /* Algorithms */; };
-		F35AFB392B9FAE620065145A /* GlucoseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AFB382B9FAE620065145A /* GlucoseData.swift */; };
-		F35AFB3B2B9FAE6D0065145A /* GlucoseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AFB3A2B9FAE6D0065145A /* GlucoseVM.swift */; };
-		F36BB9452A5ED4D200E93809 /* HealthPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9442A5ED4D200E93809 /* HealthPointApp.swift */; };
-		F36BB94B2A5ED4D500E93809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36BB94A2A5ED4D500E93809 /* Assets.xcassets */; };
-		F36BB9732A5ED55200E93809 /* HealthList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36BB9722A5ED55200E93809 /* HealthList.swift */; };
 		F36BB9782A5EDEAE00E93809 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F36BB9772A5EDEAE00E93809 /* ScrechKit */; };
 		F383526A2ECD409800535F26 /* HealthyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F38352692ECD409800535F26 /* HealthyKit */; };
-		F38353512ECDDC6600535F26 /* DataListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38353502ECDDC6600535F26 /* DataListRow.swift */; };
-		F3E7038F2B9B00D500333D4F /* InsulinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7038C2B9B00CB00333D4F /* InsulinView.swift */; };
-		F3E703912B9B00D900333D4F /* DiabetesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7038E2B9B00CB00333D4F /* DiabetesVM.swift */; };
-		F3E703932B9B010700333D4F /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E703922B9B010700333D4F /* Transition.swift */; };
-		F3E703952B9B01F700333D4F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E703942B9B01F700333D4F /* HomeView.swift */; };
-		F3E703972B9B027900333D4F /* DataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E703962B9B027900333D4F /* DataList.swift */; };
-		F3E703992B9B03E400333D4F /* DataRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E703982B9B03E400333D4F /* DataRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F35AFB382B9FAE620065145A /* GlucoseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseData.swift; sourceTree = "<group>"; };
-		F35AFB3A2B9FAE6D0065145A /* GlucoseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseVM.swift; sourceTree = "<group>"; };
 		F36BB9412A5ED4D200E93809 /* Health Point.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Point.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36BB9442A5ED4D200E93809 /* HealthPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPointApp.swift; sourceTree = "<group>"; };
-		F36BB94A2A5ED4D500E93809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F36BB94C2A5ED4D500E93809 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
-		F36BB9502A5ED4D500E93809 /* iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
-		F36BB9722A5ED55200E93809 /* HealthList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthList.swift; sourceTree = "<group>"; };
-		F38353502ECDDC6600535F26 /* DataListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListRow.swift; sourceTree = "<group>"; };
-		F3E7038C2B9B00CB00333D4F /* InsulinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsulinView.swift; sourceTree = "<group>"; };
-		F3E7038E2B9B00CB00333D4F /* DiabetesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetesVM.swift; sourceTree = "<group>"; };
-		F3E703922B9B010700333D4F /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
-		F3E703942B9B01F700333D4F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		F3E703962B9B027900333D4F /* DataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataList.swift; sourceTree = "<group>"; };
-		F3E703982B9B03E400333D4F /* DataRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F38353522ECE27E400535F26 /* LibreView */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = LibreView;
-			sourceTree = "<group>";
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F37222C42ECFDD5800CCE9EE /* Exceptions for "Health Point" folder in "Health Point" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				iOS.plist,
+			);
+			target = F36BB9402A5ED4D200E93809 /* Health Point */;
 		};
-		F38353542ECE2AC200535F26 /* Nav */ = {
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F37222B32ECFDD5800CCE9EE /* Health Point */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Nav;
+			exceptions = (
+				F37222C42ECFDD5800CCE9EE /* Exceptions for "Health Point" folder in "Health Point" target */,
+			);
+			path = "Health Point";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -70,7 +52,7 @@
 		F36BB9382A5ED4D200E93809 = {
 			isa = PBXGroup;
 			children = (
-				F36BB9432A5ED4D200E93809 /* Health Point */,
+				F37222B32ECFDD5800CCE9EE /* Health Point */,
 				F36BB9422A5ED4D200E93809 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,37 +63,6 @@
 				F36BB9412A5ED4D200E93809 /* Health Point.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F36BB9432A5ED4D200E93809 /* Health Point */ = {
-			isa = PBXGroup;
-			children = (
-				F36BB9442A5ED4D200E93809 /* HealthPointApp.swift */,
-				F38353542ECE2AC200535F26 /* Nav */,
-				F36BB9502A5ED4D500E93809 /* iOS.plist */,
-				F36BB94C2A5ED4D500E93809 /* iOS.entitlements */,
-				F36BB94A2A5ED4D500E93809 /* Assets.xcassets */,
-				F3E703922B9B010700333D4F /* Transition.swift */,
-				F3E703942B9B01F700333D4F /* HomeView.swift */,
-				F36BB9722A5ED55200E93809 /* HealthList.swift */,
-				F3E7038B2B9B00CB00333D4F /* Diabetes */,
-			);
-			path = "Health Point";
-			sourceTree = "<group>";
-		};
-		F3E7038B2B9B00CB00333D4F /* Diabetes */ = {
-			isa = PBXGroup;
-			children = (
-				F3E703962B9B027900333D4F /* DataList.swift */,
-				F38353502ECDDC6600535F26 /* DataListRow.swift */,
-				F35AFB382B9FAE620065145A /* GlucoseData.swift */,
-				F35AFB3A2B9FAE6D0065145A /* GlucoseVM.swift */,
-				F38353522ECE27E400535F26 /* LibreView */,
-				F3E7038C2B9B00CB00333D4F /* InsulinView.swift */,
-				F3E7038E2B9B00CB00333D4F /* DiabetesVM.swift */,
-				F3E703982B9B03E400333D4F /* DataRecord.swift */,
-			);
-			path = Diabetes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +79,7 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				F38353522ECE27E400535F26 /* LibreView */,
-				F38353542ECE2AC200535F26 /* Nav */,
+				F37222B32ECFDD5800CCE9EE /* Health Point */,
 			);
 			name = "Health Point";
 			packageProductDependencies = (
@@ -183,7 +133,6 @@
 		F36BB93F2A5ED4D200E93809 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				F36BB94B2A5ED4D500E93809 /* Assets.xcassets in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
@@ -192,17 +141,6 @@
 		F36BB93D2A5ED4D200E93809 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
-				F35AFB3B2B9FAE6D0065145A /* GlucoseVM.swift in Sources */,
-				F3E703972B9B027900333D4F /* DataList.swift in Sources */,
-				F3E703932B9B010700333D4F /* Transition.swift in Sources */,
-				F3E703912B9B00D900333D4F /* DiabetesVM.swift in Sources */,
-				F3E703952B9B01F700333D4F /* HomeView.swift in Sources */,
-				F38353512ECDDC6600535F26 /* DataListRow.swift in Sources */,
-				F36BB9732A5ED55200E93809 /* HealthList.swift in Sources */,
-				F36BB9452A5ED4D200E93809 /* HealthPointApp.swift in Sources */,
-				F35AFB392B9FAE620065145A /* GlucoseData.swift in Sources */,
-				F3E7038F2B9B00D500333D4F /* InsulinView.swift in Sources */,
-				F3E703992B9B03E400333D4F /* DataRecord.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */

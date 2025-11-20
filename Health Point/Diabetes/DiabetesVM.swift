@@ -12,7 +12,6 @@ final class DiabetesVM {
     }
     
     var recordDate = Date()
-    var previousValue = 0.0 // Required for transition
     
     var timeDifference: String {
         timeDifferenceFromNow(recordDate)
