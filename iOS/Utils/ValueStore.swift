@@ -5,6 +5,4 @@ final class ValueStore: ObservableObject {
     @AppStorage("selected_insulin") var selectedInsulin: InsulinType = .bolus
     
     @AppStorage("last_tab") var lastTab = 0
-    
-    @AppStorage("isAuthorised") var isAuthorised = false
 }
