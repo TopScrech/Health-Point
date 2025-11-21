@@ -1,5 +1,6 @@
 import SwiftUI
 import HealthKit
+import HealthyKit
 
 struct HealthList: View {
     @EnvironmentObject private var store: ValueStore
@@ -55,7 +56,7 @@ struct HealthList: View {
     
     private func fetchHeartrate() {
         let heartRateUnit = HKUnit(from: "count/min")
-        let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate)!
+        let heartRateType = HKQuantityType.heartRate()!
         
         let endDate = Date()
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)
