@@ -3,9 +3,7 @@ import SwiftUI
 struct InsulinView: View {
     @Bindable private var vm = DiabetesVM()
     @Environment(\.dismiss) private var dismiss
-    
-    @AppStorage("amount_insulin") private var amountInsulin = 5.0
-    @AppStorage("selected_insulin") private var selectedInsulin: InsulinType = .bolus
+    @EnvironmentObject private var store: ValueStore
     
     var body: some View {
         VStack(spacing: 25) {
@@ -17,7 +15,7 @@ struct InsulinView: View {
             
             Text(vm.timeDifference)
             
-            Picker("Insulin Type", selection: $selectedInsulin) {
+            Picker("Insulin Type", selection: $store.selectedInsulin) {
                 ForEach(InsulinType.allCases) {
                     Text($0.rawValue)
                         .tag($0)
@@ -28,7 +26,7 @@ struct InsulinView: View {
             
             HStack(spacing: 50) {
                 Button {
-                    amountInsulin -= 1
+                    store.amountInsulin -= 1
                 } label: {
                     Text("-1")
                         .padding()
@@ -36,13 +34,13 @@ struct InsulinView: View {
                         .background(.red, in: .rect(cornerRadius: 16))
                 }
                 
-                Text(amountInsulin)
+                Text(store.amountInsulin)
                     .monospaced()
-                    .animation(.default, value: amountInsulin)
-                    .numericTransition(amountInsulin)
+                    .animation(.default, value: store.amountInsulin)
+                    .numericTransition(store.amountInsulin)
                 
                 Button {
-                    amountInsulin += 1
+                    store.amountInsulin += 1
                 } label: {
                     Text("+1")
                         .padding()
@@ -70,7 +68,7 @@ struct InsulinView: View {
     
     private func save() {
         // METADATA???
-        vm.saveInsulinDelivery(amount: amountInsulin, type: selectedInsulin, date: vm.recordDate)
+        vm.saveInsulinDelivery(amount: store.amountInsulin, type: store.selectedInsulin, date: vm.recordDate)
         
         dismiss()
     }
@@ -78,4 +76,6 @@ struct InsulinView: View {
 
 #Preview {
     InsulinView()
+        .darkSchemePreferred()
+        .environmentObject(ValueStore())
 }

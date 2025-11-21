@@ -64,4 +64,5 @@ struct LibreView: View {
 
 #Preview {
     LibreView()
+        .darkSchemePreferred()
 }

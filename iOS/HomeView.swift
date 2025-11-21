@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct HomeView: View {
-    @AppStorage("last_tab") private var lastTab = 0
+    @EnvironmentObject private var store: ValueStore
     
     var body: some View {
-        TabView(selection: $lastTab) {
+        TabView(selection: $store.lastTab) {
             Tab("Dashboard", systemImage: "house", value: 0) {
                 Dashboard()
             }
@@ -15,4 +15,5 @@ struct HomeView: View {
 #Preview {
     HomeView()
         .darkSchemePreferred()
+        .environmentObject(ValueStore())
 }

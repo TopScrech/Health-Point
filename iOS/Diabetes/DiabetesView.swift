@@ -19,4 +19,5 @@ struct DiabetesView: View {
 
 #Preview {
     DiabetesView()
+        .darkSchemePreferred()
 }

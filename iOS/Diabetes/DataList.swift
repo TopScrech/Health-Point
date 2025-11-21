@@ -33,4 +33,5 @@ struct DataList: View {
 
 #Preview {
     DataList()
+        .darkSchemePreferred()
 }

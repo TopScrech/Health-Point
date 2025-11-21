@@ -2,7 +2,7 @@ import SwiftUI
 import HealthKit
 
 struct HealthList: View {
-    @AppStorage("isAuthorised") private var isAuthorised = false
+    @EnvironmentObject private var store: ValueStore
     
     private let healthStore = HKHealthStore()
     
@@ -120,4 +120,6 @@ struct HealthList: View {
 
 #Preview {
     HealthList()
+        .darkSchemePreferred()
+        .environmentObject(ValueStore())
 }
