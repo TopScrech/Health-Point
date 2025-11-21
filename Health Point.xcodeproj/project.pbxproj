@@ -17,7 +17,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F37222C42ECFDD5800CCE9EE /* Exceptions for "Health Point" folder in "Health Point" target */ = {
+		F37222C42ECFDD5800CCE9EE /* Exceptions for "iOS" folder in "Health Point" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				iOS.plist,
@@ -27,12 +27,12 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F37222B32ECFDD5800CCE9EE /* Health Point */ = {
+		F37222B32ECFDD5800CCE9EE /* iOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				F37222C42ECFDD5800CCE9EE /* Exceptions for "Health Point" folder in "Health Point" target */,
+				F37222C42ECFDD5800CCE9EE /* Exceptions for "iOS" folder in "Health Point" target */,
 			);
-			path = "Health Point";
+			path = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -52,7 +52,7 @@
 		F36BB9382A5ED4D200E93809 = {
 			isa = PBXGroup;
 			children = (
-				F37222B32ECFDD5800CCE9EE /* Health Point */,
+				F37222B32ECFDD5800CCE9EE /* iOS */,
 				F36BB9422A5ED4D200E93809 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				F37222B32ECFDD5800CCE9EE /* Health Point */,
+				F37222B32ECFDD5800CCE9EE /* iOS */,
 			);
 			name = "Health Point";
 			packageProductDependencies = (
@@ -275,7 +275,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Health Point/iOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEAD_CODE_STRIPPING = YES;
@@ -285,7 +285,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Health Point/iOS.plist";
+				INFOPLIST_FILE = iOS/iOS.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Health Point";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Display summary of your health metrics";
@@ -321,7 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Health Point/iOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEAD_CODE_STRIPPING = YES;
@@ -331,7 +331,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Health Point/iOS.plist";
+				INFOPLIST_FILE = iOS/iOS.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Health Point";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Display summary of your health metrics";
