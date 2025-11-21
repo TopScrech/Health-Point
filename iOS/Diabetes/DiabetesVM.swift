@@ -26,7 +26,7 @@ final class DiabetesVM {
         .map(Array.init)
     }
     
-    func deleteRecord(_ record: HKObject, completion: @escaping (Bool, Error?) -> Void) {
+    func deleteRecord(_ record: HKObject, completion: @escaping @Sendable (Bool, Error?) -> Void) {
         healthStore.delete([record]) { success, error in
             completion(success, error)
         }
@@ -61,16 +61,12 @@ final class DiabetesVM {
         }
     }
     
-    let glucoseType: HKQuantityType? = .bloodGlucose()
-    let insulinType: HKQuantityType? = .insulinDelivery()
-    let carbsType: HKQuantityType? = .dietaryCarbohydrates()
+    let glucoseType: HKQuantityType = .bloodGlucose
+    let insulinType: HKQuantityType = .insulinDelivery
+    let carbsType: HKQuantityType = .dietaryCarbohydrates
     
     private var dataTypes: Set<HKQuantityType> {
-        if let glucoseType, let insulinType, let carbsType {
-            Set([glucoseType, insulinType, carbsType])
-        } else {
-            []
-        }
+        Set([glucoseType, insulinType, carbsType])
     }
     
     private func requestAccess() {
@@ -152,13 +148,15 @@ final class DiabetesVM {
                 loadedRecords.append(record)
             }
             
-            self.records = loadedRecords
+            Task { @MainActor in
+                self.records = loadedRecords
+            }
         }
         
         healthStore.execute(insulinQuery)
     }
     
-    func deleteRecord(_ record: DataRecord, completion: @escaping (Bool, Error?) -> Void) {
+    func deleteRecord(_ record: DataRecord, completion: @escaping @Sendable (Bool, Error?) -> Void) {
         healthStore.delete([record.healthKitObject]) { success, error in
             completion(success, error)
         }
@@ -210,16 +208,10 @@ final class DiabetesVM {
     }
     
     func saveInsulinDelivery(amount: Double, type: InsulinType, date: Date) {
-        guard let insulinDeliveryType = HKObjectType.quantityType(forIdentifier: .insulinDelivery) else {
-            print("Insulin Delivery Type is unavailable in HealthKit")
-            return
-        }
-        
-        let insulinUnit = HKUnit.internationalUnit()
-        let insulinQuantity = HKQuantity(unit: insulinUnit, doubleValue: amount)
+        let insulinQuantity = HKQuantity(unit: .internationalUnit(), doubleValue: amount)
         
         let insulinSample = HKQuantitySample(
-            type: insulinDeliveryType,
+            type: .insulinDelivery,
             quantity: insulinQuantity,
             start: date,
             end: date,

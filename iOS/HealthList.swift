@@ -56,16 +56,15 @@ struct HealthList: View {
     
     private func fetchHeartrate() {
         let heartRateUnit = HKUnit(from: "count/min")
-        let heartRateType = HKQuantityType.heartRate()!
         
         let endDate = Date()
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)
-        
         let mostRecentPredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
-        let heartRateQuery = HKSampleQuery (
-            sampleType: heartRateType,
+        let heartRateQuery = HKSampleQuery(
+            sampleType: HKQuantityType.heartRate,
             predicate: mostRecentPredicate,
             limit: HKObjectQueryNoLimit,
             sortDescriptors: [sortDescriptor]
@@ -90,12 +89,11 @@ struct HealthList: View {
     }
     
     private func fetchWorkouts() {
-        let workout = HKObjectType.workoutType()
         let predicate = HKQuery.predicateForWorkouts(with: .running)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
         let workoutQuery = HKSampleQuery (
-            sampleType: workout,
+            sampleType: .workoutType(),
             predicate: predicate,
             limit: HKObjectQueryNoLimit,
             sortDescriptors: [sortDescriptor]

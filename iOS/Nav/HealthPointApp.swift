@@ -1,4 +1,5 @@
 import ScrechKit
+import HealthyKit
 
 @main
 struct HealthPointApp: App {
