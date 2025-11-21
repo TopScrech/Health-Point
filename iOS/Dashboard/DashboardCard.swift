@@ -7,7 +7,7 @@ struct DashboardCard: View {
     private let value: String
     private let unit: String?
     
-    init(title: String, icon: String, iconColor: Color, value: String, unit: String? = nil) {
+    init(_ title: String, icon: String, iconColor: Color, value: String, unit: String? = nil) {
         self.title = title
         self.icon = icon
         self.iconColor = iconColor
@@ -53,6 +53,7 @@ struct DashboardCard: View {
             }
         }
         .frame(maxWidth: 180, alignment: .leading)
+        .frame(height: 70)
         .padding()
         .background(.ultraThinMaterial, in: .rect(cornerRadius: 16))
         //        .overlay {
