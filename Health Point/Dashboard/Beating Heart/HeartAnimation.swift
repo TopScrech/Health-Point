@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct     HeartAnimation: View {
+struct HeartAnimation: View {
     @State private var beatAnimation = false
     @State private var showPusles = false
     @State private var pulsedHearts: [HeartParticle] = []
@@ -8,54 +8,12 @@ struct     HeartAnimation: View {
     
     var body: some View {
         VStack {
-            ZStack {
-                if showPusles {
-                    TimelineView(.animation(minimumInterval: 0.7, paused: false)) { timeline in
-                        
-                        // Method 2
-                        ZStack {
-                            /// Inserting into Canvas with Unique ID
-                            ForEach(pulsedHearts) { _ in
-                                PulseHeartView()
-                            }
-                        }
-                        .onChange(of: timeline.date) {
-                            if beatAnimation {
-                                addPulsedHeart()
-                            }
-                        }
-                        
-                        /// Method 1
-                        //                        Canvas { context, size in
-                        //                            /// Drawing into the Canvas
-                        //                            for heart in pulsedHearts {
-                        //                                if let resolvedView = context.resolveSymbol(id: heart.id) {
-                        //                                    let centerX = size.width / 2
-                        //                                    let centerY = size.height / 2
-                        //
-                        //                                    context.draw(resolvedView, at: CGPoint(x: centerX, y: centerY))
-                        //                                }
-                        //                            }
-                        //                        } symbols: {
-                        //                            /// Inserting into Canvas with Unique ID
-                        //                            ForEach(pulsedHearts) {
-                        //                                PulseHeartView()
-                        //                                    .id($0.id)
-                        //                            }
-                        //                        }
-                        //                        .onChange(of: timeline.date) {
-                        //                            if beatAnimation {
-                        //                                addPulsedHeart()
-                        //                            }
-                        //                        }
-                    }
-                }
-                
-                Image(systemName: "suit.heart.fill")
-                    .fontSize(20)
-                    .foregroundStyle(.pink.gradient)
-                    .symbolEffect(.bounce, options: !beatAnimation ? .default : .repeating.speed(1), value: beatAnimation)
-            }
+            HeartView(
+                beatAnimation: $beatAnimation,
+                showPusles: $showPusles,
+                pulsedHearts: $pulsedHearts,
+                addPulsedHeart: addPulsedHeart
+            )
             .frame(maxWidth: 350, maxHeight: 350)
             .overlay(alignment: .bottomLeading) {
                 VStack(alignment: .leading, spacing: 5) {
@@ -128,6 +86,64 @@ struct     HeartAnimation: View {
             if pulsedHearts.isEmpty {
                 showPusles = false
             }
+        }
+    }
+}
+
+struct HeartView: View {
+    @Binding var beatAnimation: Bool
+    @Binding var showPusles: Bool
+    @Binding var pulsedHearts: [HeartParticle]
+    let addPulsedHeart: () -> Void
+    
+    var body: some View {
+        ZStack {
+            if showPusles {
+                TimelineView(.animation(minimumInterval: 1.5, paused: false)) { timeline in
+                    
+                    // Method 2
+                    ZStack {
+                        /// Inserting into Canvas with Unique ID
+                        ForEach(pulsedHearts) { _ in
+                            PulseHeartView()
+                        }
+                    }
+                    .onChange(of: timeline.date) {
+                        if beatAnimation {
+                            addPulsedHeart()
+                        }
+                    }
+                    
+                    /// Method 1
+                    //                    Canvas { context, size in
+                    //                        /// Drawing into the Canvas
+                    //                        for heart in pulsedHearts {
+                    //                            if let resolvedView = context.resolveSymbol(id: heart.id) {
+                    //                                let centerX = size.width / 2
+                    //                                let centerY = size.height / 2
+                    //
+                    //                                context.draw(resolvedView, at: CGPoint(x: centerX, y: centerY))
+                    //                            }
+                    //                        }
+                    //                    } symbols: {
+                    //                        /// Inserting into Canvas with Unique ID
+                    //                        ForEach(pulsedHearts) {
+                    //                            PulseHeartView()
+                    //                                .id($0.id)
+                    //                        }
+                    //                    }
+                    //                    .onChange(of: timeline.date) {
+                    //                        if beatAnimation {
+                    //                            addPulsedHeart()
+                    //                        }
+                    //                    }
+                }
+            }
+            
+            Image(systemName: "suit.heart.fill")
+                .fontSize(20)
+                .foregroundStyle(.pink.gradient)
+                .symbolEffect(.bounce, options: !beatAnimation ? .default : .repeating.speed(1), value: beatAnimation)
         }
     }
 }

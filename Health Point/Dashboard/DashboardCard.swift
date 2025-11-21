@@ -15,13 +15,27 @@ struct DashboardCard: View {
         self.unit = unit
     }
     
+    @State private var beatAnimation = false
+    @State private var showPusles = false
+    @State private var pulsedHearts: [HeartParticle] = []
+    @State private var heartBeat = 85
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Image(systemName: icon)
-                    .title()
-                    .symbolVariant(.fill)
-                    .foregroundStyle(iconColor.gradient)
+                if title == "Heart Rate" {
+                    HeartView(
+                        beatAnimation: $beatAnimation,
+                        showPusles: $showPusles,
+                        pulsedHearts: $pulsedHearts,
+                        addPulsedHeart: addPulsedHeart
+                    )
+                } else {
+                    Image(systemName: icon)
+                        .title()
+                        .symbolVariant(.fill)
+                        .foregroundStyle(iconColor.gradient)
+                }
                 
                 Text(title)
                     .title3(.semibold)
@@ -45,6 +59,25 @@ struct DashboardCard: View {
         //            RoundedRectangle(cornerRadius: 16)
         //                .stroke(.red.gradient, lineWidth: 1)
         //        }
+        .onAppear {
+            showPusles = true
+            beatAnimation = true
+        }
+    }
+    
+    func addPulsedHeart() {
+        let pulsedHeart = HeartParticle()
+        pulsedHearts.append(pulsedHeart)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            pulsedHearts.removeAll {
+                $0.id == pulsedHeart.id
+            }
+            
+            if pulsedHearts.isEmpty {
+                showPusles = false
+            }
+        }
     }
 }
 
