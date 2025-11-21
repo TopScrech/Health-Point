@@ -99,9 +99,7 @@ struct HeartView: View {
     var body: some View {
         ZStack {
             if showPusles {
-                TimelineView(.animation(minimumInterval: 1.5, paused: false)) { timeline in
-                    
-                    // Method 2
+                TimelineView(.animation(minimumInterval: 1.4, paused: false)) { timeline in
                     ZStack {
                         /// Inserting into Canvas with Unique ID
                         ForEach(pulsedHearts) { _ in
@@ -113,30 +111,6 @@ struct HeartView: View {
                             addPulsedHeart()
                         }
                     }
-                    
-                    /// Method 1
-                    //                    Canvas { context, size in
-                    //                        /// Drawing into the Canvas
-                    //                        for heart in pulsedHearts {
-                    //                            if let resolvedView = context.resolveSymbol(id: heart.id) {
-                    //                                let centerX = size.width / 2
-                    //                                let centerY = size.height / 2
-                    //
-                    //                                context.draw(resolvedView, at: CGPoint(x: centerX, y: centerY))
-                    //                            }
-                    //                        }
-                    //                    } symbols: {
-                    //                        /// Inserting into Canvas with Unique ID
-                    //                        ForEach(pulsedHearts) {
-                    //                            PulseHeartView()
-                    //                                .id($0.id)
-                    //                        }
-                    //                    }
-                    //                    .onChange(of: timeline.date) {
-                    //                        if beatAnimation {
-                    //                            addPulsedHeart()
-                    //                        }
-                    //                    }
                 }
             }
             
