@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Home: View {
+struct     HeartAnimation: View {
     @State private var beatAnimation = false
     @State private var showPusles = false
     @State private var pulsedHearts: [HeartParticle] = []
@@ -52,7 +52,7 @@ struct Home: View {
                 }
                 
                 Image(systemName: "suit.heart.fill")
-                    .fontSize(100)
+                    .fontSize(20)
                     .foregroundStyle(.pink.gradient)
                     .symbolEffect(.bounce, options: !beatAnimation ? .default : .repeating.speed(1), value: beatAnimation)
             }
@@ -137,17 +137,17 @@ struct PulseHeartView: View {
     
     var body: some View {
         Image(systemName: "suit.heart.fill")
-            .fontSize(100)
+            .fontSize(20)
             .foregroundStyle(.pink)
             .background {
                 Image(systemName: "suit.heart.fill")
-                    .fontSize(100)
+                    .fontSize(20)
                     .foregroundStyle(.black)
                     .blur(radius: 5, opaque: false)
                     .scaleEffect(startAnimation ? 1.1 : 0)
                     .animation(.linear(duration: 1.5), value: startAnimation)
             }
-            .scaleEffect(startAnimation ? 4 : 1)
+            .scaleEffect(startAnimation ? 2 : 1)
             .opacity(startAnimation ? 0 : 0.7)
             .onAppear {
                 withAnimation(.linear(duration: 3)) {
@@ -158,6 +158,6 @@ struct PulseHeartView: View {
 }
 
 #Preview {
-    Home()
+    HeartAnimation()
         .darkSchemePreferred()
 }
