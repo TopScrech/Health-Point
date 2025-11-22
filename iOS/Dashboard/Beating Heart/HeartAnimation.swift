@@ -1,95 +1,5 @@
 import SwiftUI
 
-struct HeartAnimation: View {
-    @State private var beatAnimation = false
-    @State private var showPusles = false
-    @State private var pulsedHearts: [HeartParticle] = []
-    @State private var heartBeat = 85
-    
-    var body: some View {
-        VStack {
-            HeartView(
-                beatAnimation: $beatAnimation,
-                showPusles: $showPusles,
-                pulsedHearts: $pulsedHearts,
-                addPulsedHeart: addPulsedHeart
-            )
-            .frame(maxWidth: 350, maxHeight: 350)
-            .overlay(alignment: .bottomLeading) {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Current")
-                        .title3(.bold)
-                        .foregroundStyle(.white)
-                    
-                    HStack(alignment: .bottom, spacing: 6) {
-                        if beatAnimation {
-                            TimelineView(.animation(minimumInterval: 1.5, paused: false)) { timeline in
-                                Text(heartBeat)
-                                    .fontSize(45)
-                                    .bold()
-                                    .numericTransition(heartBeat)
-                                    .foregroundStyle(.white)
-                                    .onChange(of: timeline.date) {
-                                        withAnimation(.bouncy) {
-                                            heartBeat = .random(in: 80...130)
-                                        }
-                                    }
-                            }
-                        } else {
-                            Text(heartBeat)
-                                .fontSize(45)
-                                .bold()
-                                .foregroundStyle(.white)
-                        }
-                        
-                        Text("BPM")
-                            .callout(.bold)
-                            .foregroundStyle(.pink.gradient)
-                    }
-                    .monospacedDigit()
-                    
-                    Text("88 BPM, 10m ago")
-                        .font(.callout)
-                        .foregroundStyle(.gray)
-                }
-                .offset(x: 30, y: -35)
-            }
-            .background(.bar, in: .rect(cornerRadius: 30))
-            
-            Toggle("Beat Animation", isOn: $beatAnimation)
-                .padding(15)
-                .frame(maxWidth: 350)
-                .background(.bar, in: .rect(cornerRadius: 15))
-                .padding(.top, 20)
-                .onChange(of: beatAnimation) { _, newValue in
-                    if pulsedHearts.isEmpty {
-                        showPusles = true
-                    }
-                    
-                    if newValue && pulsedHearts.isEmpty {
-                        addPulsedHeart()
-                    }
-                }
-                .disabled(!beatAnimation && !pulsedHearts.isEmpty)
-        }
-    }
-    
-    func addPulsedHeart() {
-        let pulsedHeart = HeartParticle()
-        pulsedHearts.append(pulsedHeart)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            pulsedHearts.removeAll {
-                $0.id == pulsedHeart.id
-            }
-            
-            if pulsedHearts.isEmpty {
-                showPusles = false
-            }
-        }
-    }
-}
-
 struct HeartView: View {
     @Binding var beatAnimation: Bool
     @Binding var showPusles: Bool
@@ -145,9 +55,4 @@ struct PulseHeartView: View {
                 }
             }
     }
-}
-
-#Preview {
-    HeartAnimation()
-        .darkSchemePreferred()
 }

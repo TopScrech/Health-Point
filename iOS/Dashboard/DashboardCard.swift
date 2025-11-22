@@ -18,18 +18,22 @@ struct DashboardCard: View {
     @State private var beatAnimation = false
     @State private var showPusles = false
     @State private var pulsedHearts: [HeartParticle] = []
-    @State private var heartBeat = 85
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 if title == "Heart Rate" {
-                    HeartView(
-                        beatAnimation: $beatAnimation,
-                        showPusles: $showPusles,
-                        pulsedHearts: $pulsedHearts,
-                        addPulsedHeart: addPulsedHeart
-                    )
+                    if UIAccessibility.isReduceMotionEnabled {
+                        Image(systemName: "heart.fill")
+                            .foregroundStyle(iconColor.gradient)
+                    } else {
+                        HeartView(
+                            beatAnimation: $beatAnimation,
+                            showPusles: $showPusles,
+                            pulsedHearts: $pulsedHearts,
+                            addPulsedHeart: addPulsedHeart
+                        )
+                    }
                 } else {
                     Image(systemName: icon)
                         .title()
