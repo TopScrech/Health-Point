@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct DashboardCard: View {
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
+    
     private let title: String
     private let icon: String
     private let iconColor: Color
@@ -23,7 +25,7 @@ struct DashboardCard: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 if title == "Heart Rate" {
-                    if UIAccessibility.isReduceMotionEnabled {
+                    if reduceMotion {
                         Image(systemName: "heart.fill")
                             .foregroundStyle(iconColor.gradient)
                     } else {
